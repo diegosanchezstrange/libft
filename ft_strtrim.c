@@ -12,36 +12,45 @@
 
 #include "libft.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int		len;
-	int		start;
 	int		i;
+	int		j;
+	int		len;
 	char	*res;
 
-	len = -1;
-	start = -1;
-	i = 0;
 	if (!s1 || !set)
 		return (NULL);
-	while (s1[i] && len != -1)
-	{
-		if(start == -1 && ft_strncmp((char *)s1 + i, (char *)set, ft_strlen(set)))
-			start = i;
-		else if (start != -1 && len == -1 
-				&& !ft_strncmp((char *)s1 + i, (char *)set, ft_strlen(set)) 
-				&& ft_strlen(s1) - i == ft_strlen(set))
-			len = i - start;
-		i++;
-	}
 	i = 0;
-	if (!(res = (char *)malloc(len + 1)))
-		return (NULL);
-	while (i < len)
-	{
-		res[i] = s1[start + i];
+	len = ft_strlen(s1);
+	while (s1[i] && ft_strnstr(set, ft_substr(s1, i, 1), ft_strlen(set)) != NULL)
 		i++;
+	while (len--)
+		if (!ft_strnstr(set, ft_substr(s1, len, 1), ft_strlen(set)))
+			break ;
+	if (!(res = (char *)malloc(len - i + 2)))
+		return (NULL);
+	j = 0;
+	while (j + i <= len)
+	{
+		res[j] = s1[i + j];
+		j++;
 	}
-	return (NULL);
+	res[j] = 0;
+	return (res);
+}
+
+int	main()
+{
+	char *s1 = "   \t  \n\n \t\t  \n\n\nHello \t  Please\n Trim me !\n   \n \n \t\t\n  ";
+
+	char *ret = ft_strtrim(s1, " \n\t");
+
+	printf("res : %s \n", ret);
+	if (ret == (void *)0)
+		printf("Hola");
+
+	return (0);
 }
