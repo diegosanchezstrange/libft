@@ -6,7 +6,7 @@
 /*   By: dsanchez <dsanchez@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 13:29:37 by dsanchez          #+#    #+#             */
-/*   Updated: 2021/09/08 14:21:27 by dsanchez         ###   ########.fr       */
+/*   Updated: 2021/09/11 23:11:20 by dsanchez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,3 @@ int	ft_atoi(const char *nptr)
 	}
 	return (res * sign);
 }
-

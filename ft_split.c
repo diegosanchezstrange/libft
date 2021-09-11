@@ -6,7 +6,7 @@
 /*   By: dsanchez <dsanchez@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 19:40:07 by dsanchez          #+#    #+#             */
-/*   Updated: 2021/09/11 18:27:51 by dsanchez         ###   ########.fr       */
+/*   Updated: 2021/09/11 23:17:42 by dsanchez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,8 @@ char	*get_word(char const *s, int fletter, int i)
 	char	*sol;
 
 	k = 0;
-	if (!(sol = (char *)malloc(i - fletter + 1)))
+	sol = (char *)malloc(i - fletter + 1);
+	if (!sol)
 		return (NULL);
 	while (fletter + k < i)
 	{
@@ -62,7 +63,8 @@ char	**ft_split(char const *s, char c)
 	int		i;
 	int		j;
 
-	if (!s || !(sol = (char **)malloc((count_words(s, c) + 1) * sizeof(char *))))
+	sol = (char **)malloc((count_words(s, c) + 1) * sizeof(char *));
+	if (!s || !(sol))
 		return (NULL);
 	fletter = -1;
 	i = -1;
@@ -82,4 +84,3 @@ char	**ft_split(char const *s, char c)
 	sol[j] = NULL;
 	return (sol);
 }
-

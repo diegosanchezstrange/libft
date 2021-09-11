@@ -6,7 +6,7 @@
 /*   By: dsanchez <dsanchez@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 19:39:00 by dsanchez          #+#    #+#             */
-/*   Updated: 2021/09/10 22:29:17 by dsanchez         ###   ########.fr       */
+/*   Updated: 2021/09/11 23:14:50 by dsanchez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	isset(char c, char const *set)
 {
 	int	i;
-	
+
 	i = 0;
 	while (set[i])
 	{
@@ -56,7 +56,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	len = reslen(s1, set);
 	if (len < 0)
 		len = 0;
-	if (!(res = (char *)malloc(len + 1)))
+	res = (char *)malloc(len + 1);
+	if (!res)
 		return (NULL);
 	while (s1[start] && isset(s1[start], set))
 		start++;
@@ -68,4 +69,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	res[i] = 0;
 	return (res);
 }
-

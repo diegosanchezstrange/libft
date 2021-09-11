@@ -6,7 +6,7 @@
 /*   By: dsanchez <dsanchez@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 14:30:43 by dsanchez          #+#    #+#             */
-/*   Updated: 2021/09/08 15:42:33 by dsanchez         ###   ########.fr       */
+/*   Updated: 2021/09/11 23:10:13 by dsanchez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,13 @@ char	*ft_strdup(const char *s)
 	len = ft_strlen(s);
 	i = 0;
 	cpy = (char *)malloc(len + 1);
-	if(!cpy)
+	if (!cpy)
 		return (NULL);
 	while (s[i])
 	{
 		cpy[i] = s[i];
 		i++;
 	}
-	//ft_memccpy(cpy, s, 0, len);
 	cpy[i] = 0;
 	return (cpy);
 }
-

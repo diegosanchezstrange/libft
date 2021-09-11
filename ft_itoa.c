@@ -6,7 +6,7 @@
 /*   By: dsanchez <dsanchez@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 19:40:49 by dsanchez          #+#    #+#             */
-/*   Updated: 2021/09/11 20:05:47 by dsanchez         ###   ########.fr       */
+/*   Updated: 2021/09/11 23:09:29 by dsanchez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	str_size(int n)
 {
 	int	c;
-	
+
 	c = 0;
 	if (n < 0)
 		c++;
@@ -33,8 +33,9 @@ char	*ft_itoa(int n)
 {
 	int		i;
 	char	*res;
-	
-	if (!(res = malloc(str_size(n) + 1)))
+
+	res = malloc(str_size(n) + 1);
+	if (!res)
 		return (NULL);
 	i = str_size(n);
 	if (n < 0)
@@ -46,7 +47,7 @@ char	*ft_itoa(int n)
 	{
 		if ((n % 10) > 0)
 			res[i--] = (n % 10) + 48;
-		else 
+		else
 			res[i--] = ((n % 10) * -1) + 48;
 		n = n / 10;
 	}
