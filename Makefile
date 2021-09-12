@@ -8,15 +8,17 @@ OBJS_B	= ${SRCS_B:.c=.o}
 RM		= rm -f
 
 
-.PHONY:	clean re fclean
+
+.c.o :
+	@${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
 all: ${NAME}
 
 $(NAME) : ${OBJS}
 	@ar rc ${NAME} ${OBJS}
 
-${OBJS} : ${SRCS} ${SRCS_B} libft.h
-	@${CC} ${CFLAGS} $< ${SRCS_B} -o $@
+#${OBJS} : ${SRCS} ${SRCS_B} libft.h
+	#@${CC} ${CFLAGS} $< ${SRCS_B} -o $@
 
 bonus : ${NAME}
 	@ar rc ${NAME} ${OBJS_B}
@@ -28,6 +30,8 @@ fclean:		clean
 		@${RM} ${NAME}
 
 re:		fclean all
+
+.PHONY:	clean re fclean
 
 so:
 	$(CC) -fPIC $(CFLAGS) $(SRCS)

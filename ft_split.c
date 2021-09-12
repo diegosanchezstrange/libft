@@ -6,7 +6,7 @@
 /*   By: dsanchez <dsanchez@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 19:40:07 by dsanchez          #+#    #+#             */
-/*   Updated: 2021/09/11 23:17:42 by dsanchez         ###   ########.fr       */
+/*   Updated: 2021/09/12 15:06:33 by dsanchez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,49 +38,51 @@ int	count_words(char const *s, char c)
 	return (count);
 }
 
-char	*get_word(char const *s, int fletter, int i)
+char	*get_word(char *s, char c, int *i)
 {
-	int		k;
+	int		count;
+	int		j;
 	char	*sol;
 
-	k = 0;
-	sol = (char *)malloc(i - fletter + 1);
-	if (!sol)
-		return (NULL);
-	while (fletter + k < i)
+	count = 0;
+	j = 0;
+	while (s[count] && s[count] != c)
 	{
-		sol[k] = s[fletter + k];
-		k++;
+		count++;
 	}
-	sol[k] = 0;
+	*i = *i + count;
+	sol = (char *)malloc(count + 1);
+	if (!(sol))
+		return (NULL);
+	while (j < count)
+	{
+		sol[j] = s[j];
+		j++;
+	}
+	sol[j] = 0;
 	return (sol);
 }
 
 char	**ft_split(char const *s, char c)
 {
 	char	**sol;
-	int		fletter;
 	int		i;
 	int		j;
 
-	sol = (char **)malloc((count_words(s, c) + 1) * sizeof(char *));
-	if (!s || !(sol))
+	if (!s)
 		return (NULL);
-	fletter = -1;
-	i = -1;
+	sol = (char **)malloc((count_words(s, c) + 1) * sizeof(char *));
+	if (!(sol))
+		return (NULL);
+	i = 0;
 	j = 0;
-	while (s[++i])
+	while (s[i])
 	{
-		if (fletter == -1 && s[i] != c)
-			fletter = i;
-		else if (fletter != -1 && s[i] == c)
-		{
-			sol[j++] = get_word(s, fletter, i);
-			fletter = -1;
-		}
+		if (s[i] != c)
+			sol[j++] = get_word((char *)&s[i], c, &i);
+		else
+			i++;
 	}
-	if (fletter != -1)
-		sol[j++] = get_word(s, fletter, i);
 	sol[j] = NULL;
 	return (sol);
 }
