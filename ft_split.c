@@ -6,14 +6,13 @@
 /*   By: dsanchez <dsanchez@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 19:40:07 by dsanchez          #+#    #+#             */
-/*   Updated: 2021/09/12 15:06:33 by dsanchez         ###   ########.fr       */
+/*   Updated: 2021/09/15 20:42:00 by dsanchez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-int	count_words(char const *s, char c)
+static int	count_words(char const *s, char c)
 {
 	int	fletter;
 	int	i;
@@ -38,7 +37,7 @@ int	count_words(char const *s, char c)
 	return (count);
 }
 
-char	*get_word(char *s, char c, int *i)
+static char	*get_word(char *s, char c, int *i)
 {
 	int		count;
 	int		j;

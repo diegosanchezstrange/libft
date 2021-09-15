@@ -6,13 +6,13 @@
 /*   By: dsanchez <dsanchez@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 19:40:49 by dsanchez          #+#    #+#             */
-/*   Updated: 2021/09/11 23:09:29 by dsanchez         ###   ########.fr       */
+/*   Updated: 2021/09/15 20:29:20 by dsanchez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	str_size(int n)
+static int	str_size(int n)
 {
 	int	c;
 

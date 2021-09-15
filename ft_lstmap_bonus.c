@@ -1,28 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dsanchez <dsanchez@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/15 19:48:51 by dsanchez          #+#    #+#             */
-/*   Updated: 2021/09/15 19:48:53 by dsanchez         ###   ########.fr       */
+/*   Created: 2021/09/15 19:38:23 by dsanchez          #+#    #+#             */
+/*   Updated: 2021/09/15 21:16:02 by dsanchez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	size_t			i;
-	unsigned char	*src;
+	t_list	*new;
+	t_list	*fnew;
 
-	i = 0;
-	src = (unsigned char *)s;
-	while (i < n)
+	if (!lst || !f)
+		return (NULL);
+	new = ft_lstnew((*f)(lst->content));
+	if (!new)
+		return (NULL);
+	fnew = new;
+	lst = lst->next;
+	while (lst)
 	{
-		*src = 0;
-		i++;
-		src++;
+		new->next = ft_lstnew((*f)(lst->content));
+		if (!new->next)
+		{
+			ft_lstclear(&fnew, del);
+			return (NULL);
+		}
+		new = new->next;
+		lst = lst->next;
 	}
+	new->next = NULL;
+	return (fnew);
 }

@@ -6,13 +6,13 @@
 /*   By: dsanchez <dsanchez@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/04 13:59:36 by dsanchez          #+#    #+#             */
-/*   Updated: 2021/09/04 15:01:49 by dsanchez         ###   ########.fr       */
+/*   Updated: 2021/09/15 20:31:28 by dsanchez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_copy(char *src, char *dest, unsigned int size)
+static char	*ft_copy(char *src, char *dest, unsigned int size)
 {
 	unsigned int	i;
 	char			*s;

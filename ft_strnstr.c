@@ -6,13 +6,11 @@
 /*   By: dsanchez <dsanchez@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/05 22:40:03 by dsanchez          #+#    #+#             */
-/*   Updated: 2021/09/13 17:56:11 by dsanchez         ###   ########.fr       */
+/*   Updated: 2021/09/15 20:24:50 by dsanchez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "string.h"
-#include "stdio.h"
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {

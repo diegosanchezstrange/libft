@@ -6,14 +6,14 @@
 /*   By: dsanchez <dsanchez@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/11 23:15:26 by dsanchez          #+#    #+#             */
-/*   Updated: 2021/09/11 23:15:29 by dsanchez         ###   ########.fr       */
+/*   Updated: 2021/09/15 21:47:25 by dsanchez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <unistd.h>
 
-void	ft_printnbr_fd(int n, int fd)
+static void	ft_printnbr_fd(int n, int fd)
 {
 	char	c;
 

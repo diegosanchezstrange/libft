@@ -6,13 +6,13 @@
 /*   By: dsanchez <dsanchez@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 19:39:00 by dsanchez          #+#    #+#             */
-/*   Updated: 2021/09/11 23:14:50 by dsanchez         ###   ########.fr       */
+/*   Updated: 2021/09/15 20:30:51 by dsanchez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	isset(char c, char const *set)
+static int	isset(char c, char const *set)
 {
 	int	i;
 
@@ -26,7 +26,7 @@ int	isset(char c, char const *set)
 	return (0);
 }
 
-int	reslen(char const *s1, char const *set)
+static int	reslen(char const *s1, char const *set)
 {
 	int	i;
 	int	j;
