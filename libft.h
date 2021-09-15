@@ -6,7 +6,7 @@
 /*   By: dsanchez <dsanchez@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/11 23:07:49 by dsanchez          #+#    #+#             */
-/*   Updated: 2021/09/11 23:07:51 by dsanchez         ###   ########.fr       */
+/*   Updated: 2021/09/13 12:52:31 by dsanchez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 # define LIBFT_H
 # include <string.h>
 # include <stdlib.h>
+
+# define INT_MIN -2147483648
+# define INT_MAX 2147483647
 
 typedef struct s_list
 {
