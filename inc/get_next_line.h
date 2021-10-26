@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dsanchez <dsanchez@student.42madrid.c      +#+  +:+       +#+        */
+/*   By: dsanchez <dsanchez@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/05 13:14:11 by dsanchez          #+#    #+#             */
-/*   Updated: 2021/09/05 13:22:27 by dsanchez         ###   ########.fr       */
+/*   Created: 2021/09/19 20:47:45 by dsanchez          #+#    #+#             */
+/*   Updated: 2021/10/26 21:08:55 by dsanchez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
+# include <string.h>
+# include <unistd.h>
+# include <stdlib.h>
 
-void	*ft_memchr(const void *s, int c, size_t n)
-{
-	unsigned char	*cs;
-	size_t			i;
+char	*ft_strjoin_gnl(char *s1, char *s2);
+size_t	ft_strlen(char const *s);
+char	*get_next_line(int fd);
 
-	i = 0;
-	cs = (unsigned char *)s;
-	while (i < n)
-	{
-		if (cs[i] == ((unsigned char)c))
-			return (cs + i);
-		i++;
-	}
-	return (NULL);
-}
+#endif
