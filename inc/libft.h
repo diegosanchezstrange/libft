@@ -6,13 +6,14 @@
 /*   By: dsanchez <dsanchez@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/11 23:07:49 by dsanchez          #+#    #+#             */
-/*   Updated: 2021/10/26 20:46:35 by dsanchez         ###   ########.fr       */
+/*   Updated: 2021/11/13 17:36:50 by dsanchez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # include "libft.h"
+# include "ft_printf.h"
 # include "get_next_line.h"
 # include <string.h>
 # include <stdlib.h>
