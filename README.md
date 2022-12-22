@@ -3,7 +3,9 @@ My implementation of some of the Standard C Library functions
 
 ## About
 
-This is the first project of the 42 cursus and aims to teach you about the libc functions by making you implment them. You will be using all of this functions in your future projects, for that reson you can add anything that you find useful that doesn´t break any of the rules of the projects (like using forbbiden functions or the implementation not goig according to the Norm)
+This is the first project of the 42 cursus and aims to teach you about the libc functions by making you implment them. 
+
+You will be using all of this functions in your future projects, for that reson you can add anything that you find useful that doesn´t break any of the rules of the projects (like using forbbiden functions or the implementation not goig according to the Norm)
 
 Apart from the basic functions the bonus part of this project asks you to implement a linked list and some functions to use it.
 
